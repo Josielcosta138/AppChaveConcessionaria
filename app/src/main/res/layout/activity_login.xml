@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:background="@color/colorPrimary4"
+    android:paddingTop="110dp"
+    android:paddingRight="30dp"
+    android:paddingLeft="30dp"
+    >
+
+    ///imagem logomarca
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/user"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo">
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:textColor="@color/colorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    ///editext da senha
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_email">
+        <EditText
+            android:id="@+id/edt_senha"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Senha"
+            android:textColor="@color/colorText"
+            app:passwordToggleEnabled="true"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    /// barra de progresso
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_senha"
+        android:layout_marginTop="35dp"
+        android:visibility="gone"
+        />
+
+    /// botão de login
+    <Button
+        android:id="@+id/btn_login"
+        android:text="ENTRAR"
+        android:layout_below="@id/layout_senha"
+        android:layout_marginTop="35dp"
+        android:backgroundTint="@color/colorPrimary2"
+        android:textColor="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+   ///Textview Registre-se
+    <TextView
+        android:id="@+id/txt_registro"
+        android:text="Registre-se"
+        android:gravity="center"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="@color/colorAccent2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+    </RelativeLayout>
