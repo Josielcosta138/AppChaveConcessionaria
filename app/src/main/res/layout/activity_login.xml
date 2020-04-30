@@ -84,7 +84,7 @@
         android:id="@+id/txt_registro"
         android:text="Registre-se"
         android:gravity="center"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="100dp"
         android:layout_alignParentBottom="true"
         android:textColor="@color/colorAccent2"
         android:layout_width="match_parent"

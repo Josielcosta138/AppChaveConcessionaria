@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         ///conexão dos objetos com a classe R
         email = findViewById(R.id.edt_email);
         senha = findViewById(R.id.edt_senha);
