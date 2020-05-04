@@ -53,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
     SessionManager sessionManeger;
     private static String URL_READ = "http://192.168.137.1/applogin/ler_detalhe.php";
     private static String URL_EDIT = "http://192.168.137.1/applogin/editar_detalhe.php";
+    private static String URL_UPLOAD = "http://192.168.137.1/applogin/upload.php";
     private Menu action;
     Bitmap bitmap;
     ImageView imagem_perfil;
@@ -276,11 +277,12 @@ public class HomeActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }// fim do catch
-            UploadPicture(getId, getStringImage(bitmap));
+            UploadPicture(getId, (String) getStringImage(bitmap));
             
         }//if
     }//on ActivityResult
 
+    /// pega a string da foto
     private Object getStringImage(Bitmap bitmap) {
         ByteArrayOutputStream ByteArrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, ByteArrayOutputStream);
@@ -291,7 +293,60 @@ public class HomeActivity extends AppCompatActivity {
         return encodeImage;
 
     }//getStringImage
-    UploadPicture(getId, getStringImage(bitmap));
+
+            //SavaeEdidtDatail SALVAR <---
+
+       private void UploadPicture (final String id,final String photo) {
+           final ProgressDialog progressDialog = new ProgressDialog(this);
+           progressDialog.setMessage("Carregando...");
+           progressDialog.show();
+
+           //passar as informaçoes para o arquivo PHP e pedier uma resposta dele.
+           StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_UPLOAD,
+                   new Response.Listener<String>() {
+                       @Override
+                       public void onResponse(String response) {
+                           progressDialog.dismiss();//DESAPAREÇA MSG
+                           Log.i(TAG, response);
+                           try {
+                               JSONObject jasonObject = new JSONObject(response);
+                               String sucess = jasonObject.getString("sucess");
+
+                               if (sucess.equals("1")) {
+                                   Toast.makeText(HomeActivity.this, "Sucesso!", Toast.LENGTH_SHORT).show();
+                               }//if
+
+                           } catch (JSONException e) {
+                               e.printStackTrace();
+                               Toast.makeText(HomeActivity.this, "TENTE NOVAMENTE!" + e.toString(), Toast.LENGTH_SHORT).show();
+                           }//catch
+
+                       }//onResponse
+                   },
+                   new Response.ErrorListener() {
+                       @Override
+                       public void onErrorResponse(VolleyError error) {
+                           progressDialog.dismiss();
+                           Toast.makeText(HomeActivity.this, "ENTE NOVAMENTE!!" + error.toString(), Toast.LENGTH_SHORT).show();
+                       }//OnerroResponseListener
+                   }//o
+
+           )//FIM stringRequest
+           {//Parans ou parametros de requisaçao
+
+               @Override
+               protected Map<String, String> getParams() throws AuthFailureError {
+                   Map<String, String> params = new HashMap<>();
+                   params.put("photo", photo);
+                   params.put("id", id);
+                   return params;
+               }
+           };//StringRequest
+
+           RequestQueue requestQueue = Volley.newRequestQueue(this);
+           requestQueue.add(stringRequest);
+
+       }
 
 }// class
 

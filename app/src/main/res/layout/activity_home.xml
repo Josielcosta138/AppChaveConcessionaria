@@ -15,7 +15,7 @@
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:src="@drawable/ic_carro"
+        android:src="@drawable/ic_Android"
         />
 
     <Button
@@ -44,7 +44,8 @@
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:src="@drawable/ic_nome" />
+        android:src="@drawable/ic_nome"
+        />
 
 
     <EditText
@@ -55,7 +56,9 @@
         android:hint="Nome"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        />
+
 
     </LinearLayout>
 
@@ -97,7 +100,7 @@
         android:layout_marginBottom="80dp"
         android:text="Logout"
         android:textColor="@color/colorAccent2"
-        android:backgroundTint="@color/colorPrimary6"
+        android:backgroundTint="@color/colorPrimary8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
