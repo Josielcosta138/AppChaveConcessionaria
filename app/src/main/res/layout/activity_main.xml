@@ -7,9 +7,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="80dp"
+    android:background="@color/colorPrimary5"
     tools:context=".RegistroActivity">
 
     ///EditText NOME
+
+    <ImageView
+        android:id="@+id/imagem_perfil"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_Android" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -80,7 +89,7 @@
 
     <Button
         android:id="@+id/btn_registrar"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimary8"
         android:textColor="@android:color/white"
         android:text="Registrar"
         android:layout_marginTop="30dp"
