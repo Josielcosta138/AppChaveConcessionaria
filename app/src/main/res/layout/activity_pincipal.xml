@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/colorPrimary5"
+    >
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/chkHabilitar"
+        android:text="Habilitar"
+        />
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tgHabilitar"
+        android:textOn="Chave liberada"
+        android:textOff="Liberar Chave"
+        android:backgroundTint="@color/colorPrimary8"
+        />
+
+    <Switch
+        android:id="@+id/swtHabilitar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Habilitar"
+        android:textOn="Habilitar"
+        android:textOff="Desabilitar"
+        android:checked="true"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/skbValor"
+        android:max="30" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtValor"
+        android:text="0"
+        android:layout_gravity="center"
+        />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spnChaves"
+
+        />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rgOpcoes"
+        >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbOpcao1"
+            android:text="Vendas "
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbOpcao2"
+            android:text="Manutençao "
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbOpcao3"
+            android:text="Lavação "
+            android:checked="true"
+            />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnValores"
+        android:text="Ver Valores"
+        android:layout_gravity="right"
+        android:drawableLeft="@drawable/ic_Android"
+        android:onClick="verValores"
+        android:backgroundTint="@color/colorPrimary8"
+        />
+
+</LinearLayout>
